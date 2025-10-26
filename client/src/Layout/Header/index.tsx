@@ -1,3 +1,5 @@
+import { navbaritems } from "../../Constants/navbar";
+
 const Header = () => {
   return (
     <header className="sticky top-0 bg-white z-999">
@@ -13,11 +15,11 @@ const Header = () => {
         </div>
         <div className="col-span-6">
           <ul className="flex items-center gap-10 justify-center text-[#0c0407] text-[14px] leading-5 font-inter">
-            <li className="cursor-pointer">Categories</li>
-            <li className="cursor-pointer">Shop</li>
-            <li className="cursor-pointer">About</li>
-            <li className="cursor-pointer">Blog</li>
-            <li className="cursor-pointer">Contacts</li>
+            {navbaritems().map((item: any) => (
+              <li key={item?.id} className="cursor-pointer">
+                {item?.name}
+              </li>
+            ))}
           </ul>
         </div>
         <div className="col-span-3">
