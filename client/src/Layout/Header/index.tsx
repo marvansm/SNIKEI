@@ -2,7 +2,7 @@ import { navbaritems } from "../../Constants/navbar";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 bg-white z-999">
+    <header className="sticky top-0 bg-white z-999 shadow-md">
       <nav className="grid grid-cols-12 container mx-auto max-w-[1200px] py-[13px] items-center">
         <div className="col-span-3">
           <div className="flex items-center justify-start ">

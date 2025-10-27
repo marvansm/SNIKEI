@@ -12,3 +12,10 @@ export type CategoryCardProps = {
   title?: string;
   image: string;
 };
+
+type ArticlesCardsProps = {
+  image: string;
+  category: string;
+  date: string;
+  title: string;
+};
