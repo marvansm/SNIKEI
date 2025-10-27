@@ -1,5 +1,5 @@
-import ArticlesCards from "../../Components/ArticlesCards";
-import HeadingText from "../../Components/Common/HeadingText";
+import ArticlesCards from "../../../Components/ArticlesCards";
+import HeadingText from "../../../Components/Common/HeadingText";
 
 const articlesData = [
   {

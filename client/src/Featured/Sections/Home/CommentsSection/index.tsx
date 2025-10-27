@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
-import HeadingText from "../../Components/Common/HeadingText";
+import HeadingText from "../../../Components/Common/HeadingText";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import type { NavigationOptions } from "swiper/types";

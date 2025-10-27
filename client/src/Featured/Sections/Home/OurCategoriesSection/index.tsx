@@ -1,6 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import HeadingText from "../../Components/Common/HeadingText";
-import CategoryCard from "../../Components/CategoryCard";
+import HeadingText from "../../../Components/Common/HeadingText";
+import CategoryCard from "../../../Components/CategoryCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { useRef } from "react";

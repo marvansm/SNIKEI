@@ -1,10 +1,10 @@
-import ArticlesSection from "../Sections/ArticlesSection";
-import BannerSection from "../Sections/BannerSection";
-import BestSection from "../Sections/BestSellerSection";
-import CommentsSection from "../Sections/CommentsSection";
-import NewArrivalsSection from "../Sections/NewArrivalsSection";
-import OurCategoriesSection from "../Sections/OurCategoriesSection";
-import SaleSection from "../Sections/SaleSection";
+import ArticlesSection from "../Sections/Home/ArticlesSection";
+import BannerSection from "../Sections/Home/BannerSection";
+import BestSection from "../Sections/Home/BestSellerSection";
+import CommentsSection from "../Sections/Home/CommentsSection";
+import NewArrivalsSection from "../Sections/Home/NewArrivalsSection";
+import OurCategoriesSection from "../Sections/Home/OurCategoriesSection";
+import SaleSection from "../Sections/Home/SaleSection";
 
 const Hometemplates = () => {
   return (
