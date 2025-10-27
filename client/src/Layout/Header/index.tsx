@@ -1,4 +1,5 @@
 import { navbaritems } from "../../Constants/navbar";
+import { Link } from "@tanstack/react-router";
 
 const Header = () => {
   return (
@@ -6,19 +7,23 @@ const Header = () => {
       <nav className="grid grid-cols-12 container mx-auto max-w-[1200px] py-[13px] items-center">
         <div className="col-span-3">
           <div className="flex items-center justify-start ">
-            <img
-              src="https://cdn.prod.website-files.com/6890fbf29f28b7089b169c21/6891d3fc55b949949257a5df_Logo.svg"
-              alt=""
-              className="max-w-full h-full object-cover"
-            />
+            <Link to={"/"}>
+              <img
+                src="https://cdn.prod.website-files.com/6890fbf29f28b7089b169c21/6891d3fc55b949949257a5df_Logo.svg"
+                alt=""
+                className="max-w-full h-full object-cover"
+              />
+            </Link>
           </div>
         </div>
         <div className="col-span-6">
           <ul className="flex items-center gap-10 justify-center text-[#0c0407] text-[14px] leading-5 font-inter">
             {navbaritems().map((item: any) => (
-              <li key={item?.id} className="cursor-pointer">
-                {item?.name}
-              </li>
+              <Link to={item?.path}>
+                <li key={item?.id} className="cursor-pointer">
+                  {item?.name}
+                </li>
+              </Link>
             ))}
           </ul>
         </div>

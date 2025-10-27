@@ -1,5 +1,8 @@
 import { ChevronUp } from "lucide-react";
 import { useState } from "react";
+import ApiServices from "../../../../Services/http";
+import { useQuery } from "@tanstack/react-query";
+import { queryKeys } from "../../../../Constants/queryKeys";
 
 export default function FilterPanel() {
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(true);
@@ -9,18 +12,15 @@ export default function FilterPanel() {
   const [selectedProduct, setSelectedProduct] = useState("$0 - $100");
   const [selectedColor, setSelectedColor] = useState("Black");
 
-  const categories = [
-    "All Products",
-    "Sneakers",
-    "Boots",
-    "Formal",
-    "Running",
-    "Oxford",
-    "Sports Shoe",
-    "High Neck",
-    "Loafers",
-  ];
-
+  const api = new ApiServices("http://localhost:1337/api/");
+  const { data: categoryData } = useQuery({
+    queryKey: [queryKeys.category],
+    queryFn: () => api.getData("categories?populate=*"),
+  });
+  const { data: colorsData } = useQuery({
+    queryKey: [queryKeys.colors],
+    queryFn: () => api.getData("colors?populate=*"),
+  });
   const priceRanges = [
     "$0 - $100",
     "$101 - $200",
@@ -30,20 +30,9 @@ export default function FilterPanel() {
     "501 - $600",
   ];
 
-  const colors = [
-    "Black",
-    "White",
-    "Red",
-    "Blue",
-    "Green",
-    "Yellow",
-    "Gray",
-    "Brown",
-  ];
-
   return (
     <div className="w-full max-w-md bg-white  ">
-      <div className="border border-gray-200 mb-3 rounded-2xl">
+      <div className="border border-gray-200 mb-2 rounded-2xl overflow-hidden">
         <button
           onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
           className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
@@ -58,13 +47,13 @@ export default function FilterPanel() {
 
         {isCategoriesOpen && (
           <div className="pb-2">
-            {categories.map((category) => (
+            {categoryData?.data?.map((category: any) => (
               <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
+                key={category.id}
+                onClick={() => setSelectedCategory(category.attributes.name)}
                 className="w-full px-6 py-3 flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
-                <span className="text-gray-900">{category}</span>
+                <span className="text-gray-900">{category.attributes.name}</span>
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                     selectedCategory === category
@@ -93,7 +82,7 @@ export default function FilterPanel() {
           </div>
         )}
       </div>
-      <div className="border border-gray-200 mb-3 rounded-2xl">
+      <div className="border border-gray-200 mb-2 rounded-2xl overflow-hidden">
         <button
           onClick={() => setIsPriceOpen(!isPriceOpen)}
           className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
@@ -143,7 +132,7 @@ export default function FilterPanel() {
           </div>
         )}
       </div>
-      <div className="border border-gray-200 mb-3 rounded-2xl">
+      <div className="border border-gray-200 mb-2 rounded-2xl overflow-hidden">
         <button
           onClick={() => setIsColorOpen(!isColorOpen)}
           className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
@@ -158,13 +147,13 @@ export default function FilterPanel() {
 
         {isColorOpen && (
           <div className="pb-2">
-            {colors.map((color) => (
+            {colorsData?.data?.map((color: any) => (
               <button
-                key={color}
-                onClick={() => setSelectedColor(color)}
+                key={color.id}
+                onClick={() => setSelectedColor(color.attributes.name)}
                 className="w-full px-6 py-3 flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
-                <span className="text-gray-900">{color}</span>
+                <span className="text-gray-900">{color.attributes.name}</span>
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                     selectedColor === color

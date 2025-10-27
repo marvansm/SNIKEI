@@ -1,7 +1,7 @@
 export const navbaritems = () => [
-  { id: 1, name: "Categories" },
-  { id: 2, name: "Shop" },
-  { id: 3, name: "About" },
-  { id: 4, name: "Blog" },
-  { id: 5, name: "Contacts" },
+  { id: 1, name: "Categories", path: "/categories" },
+  { id: 2, name: "Shop", path: "/shop" },
+  { id: 3, name: "About", path: "/about" },
+  { id: 4, name: "Blog", path: "/blog" },
+  { id: 5, name: "Contacts", path: "/contacts" },
 ];
