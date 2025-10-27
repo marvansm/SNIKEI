@@ -42,8 +42,8 @@ export default function FilterPanel() {
   ];
 
   return (
-    <div className="w-full max-w-md bg-white rounded-lg shadow-sm border border-gray-200">
-      <div className="border-b border-gray-200">
+    <div className="w-full max-w-md bg-white  ">
+      <div className="border border-gray-200 mb-3 rounded-2xl">
         <button
           onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
           className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
@@ -93,7 +93,7 @@ export default function FilterPanel() {
           </div>
         )}
       </div>
-      <div className="border-b border-gray-200">
+      <div className="border border-gray-200 mb-3 rounded-2xl">
         <button
           onClick={() => setIsPriceOpen(!isPriceOpen)}
           className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
@@ -143,7 +143,7 @@ export default function FilterPanel() {
           </div>
         )}
       </div>
-      <div className="border-b border-gray-200">
+      <div className="border border-gray-200 mb-3 rounded-2xl">
         <button
           onClick={() => setIsColorOpen(!isColorOpen)}
           className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
