@@ -1,4 +1,5 @@
 import ProductCard from "../../../Components/Products/ProductCard";
+import FilterPanel from "../../../Components/Products/ProductsFilter";
 
 const ExploreOurShop = () => {
   return (
@@ -8,8 +9,10 @@ const ExploreOurShop = () => {
           Explore Our Shop
         </h2>
       </div>
-      <div className="grid grid-cols-12">
-        <div className="col-span-3"></div>
+      <div className="grid grid-cols-12 gap-6 mb-20">
+        <div className="col-span-3">
+          <FilterPanel />
+        </div>
         <div className="col-span-9">
           <div className="grid grid-cols-3 gap-5">
             <ProductCard />
