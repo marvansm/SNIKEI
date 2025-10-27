@@ -1,4 +1,5 @@
 import BannerSection from "../Sections/BannerSection";
+import CommentsSection from "../Sections/CommentsSection";
 import OurCategoriesSection from "../Sections/OurCategoriesSection";
 import SaleSection from "../Sections/SaleSection";
 
@@ -8,6 +9,7 @@ const Hometemplates = () => {
       <BannerSection />
       <SaleSection />
       <OurCategoriesSection />
+      <CommentsSection />
     </div>
   );
 };
