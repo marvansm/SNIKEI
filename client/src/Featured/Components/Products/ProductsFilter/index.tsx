@@ -50,18 +50,18 @@ export default function FilterPanel() {
             {categoryData?.data?.map((category: any) => (
               <button
                 key={category.id}
-                onClick={() => setSelectedCategory(category.attributes.name)}
+                onClick={() => setSelectedCategory(category?.name)}
                 className="w-full px-6 py-3 flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
-                <span className="text-gray-900">{category.attributes.name}</span>
+                <span className="text-gray-900">{category?.name}</span>
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                    selectedCategory === category
+                    selectedCategory === category?.name
                       ? "border-gray-900 bg-gray-900"
                       : "border-gray-300"
                   }`}
                 >
-                  {selectedCategory === category && (
+                  {selectedCategory === category?.name && (
                     <svg
                       className="w-3 h-3 text-white"
                       fill="none"
@@ -150,18 +150,18 @@ export default function FilterPanel() {
             {colorsData?.data?.map((color: any) => (
               <button
                 key={color.id}
-                onClick={() => setSelectedColor(color.attributes.name)}
+                onClick={() => setSelectedColor(color?.name)}
                 className="w-full px-6 py-3 flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
-                <span className="text-gray-900">{color.attributes.name}</span>
+                <span className="text-gray-900">{color?.name}</span>
                 <div
                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                    selectedColor === color
+                    selectedColor === color?.name
                       ? "border-gray-900 bg-gray-900"
                       : "border-gray-300"
                   }`}
                 >
-                  {selectedColor === color && (
+                  {selectedColor === color?.name && (
                     <svg
                       className="w-3 h-3 text-white"
                       fill="none"
