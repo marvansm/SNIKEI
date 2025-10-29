@@ -14,6 +14,10 @@ class ApiServices {
     const res = await this.axiosInstance.get(url);
     return res.data;
   }
+  async PostData(url: string, payload: any): Promise<any> {
+    const res = await this.axiosInstance.post(url, payload);
+    return res.data;
+  }
 }
 
 export default ApiServices;
